@@ -1,0 +1,65 @@
+/* Mengatur font dan latar belakang halaman */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Mengatur tinggi halaman agar mengisi seluruh layar */
+}
+
+main {
+    flex: 1; /* Memberikan ruang sisa untuk main content agar footer berada di bawah */
+}
+
+/* Styling untuk label dan input form */
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Styling tombol utama */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Styling footer */
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+}
+
+/* Styling untuk tabel */
+.table thead th {
+    background-color: #007bff;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Styling tombol edit dan hapus pada tabel */
+.btn-sm {
+    font-size: 12px;
+}
+
+/* Penyesuaian tombol simpan */
+#btnSimpan {
+    padding: 15px 32px;
+    font-size: 18px;
+    height: 40px;
+}
