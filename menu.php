@@ -1,3 +1,14 @@
+<?php
+// Cek koneksi database
+include "koneksi.php"; // Pastikan file ini memiliki koneksi database yang benar
+
+if ($konek) {
+    $status_koneksi = "Connected";
+} else {
+    $status_koneksi = "Disconnected";
+}
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
