@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "koneksi.php";
 
 // Baca ID
@@ -54,56 +54,103 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <?php include "header.php"; ?>
     <title>Ubah Data Staff</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<?php include "menu.php"; ?>
+    <div class="flex flex-col lg:flex-row">
+        <div class="lg:w-1/5 w-full bg-cover bg-center text-white min-h-screen p-6 lg:block hidden" style="background-image: url('./images/bkg1.png');">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <img class="w-12 h-auto" src="./images/loggo.png" alt="">
+                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                </div>
+            </div>
 
-<div class="container py-4">
-    <div class="card shadow">
-        <div class="card-body">
-            <h3>Ubah Data Staff</h3>
-            <form method="POST">
-                <?php 
-                // Daftar input field yang akan ditampilkan
-                $inputFields = [
-                    'nokartu' => 'Nomor Kartu RFID',
-                    'nisn' => 'NIP/NUPTK',
-                    'nama' => 'Nama Karyawan',
-                    'jabatan' => 'Jabatan',
-                    'wali' => 'Wali',
-                    'lahir' => 'Tanggal Lahir',
-                    'alamat' => 'Alamat'
-                ];
+            <div id="datetime" class="text-lg font-semibold text-sm mb-5">Jumat, 3 Januari 2025 | 0:26:45</div>
 
-                // Loop untuk menampilkan input field
-                foreach ($inputFields as $name => $label) {
-                    $value = htmlspecialchars($hasil[$name] ?? '');
-                    echo '<div class="form-group">';
-                    if ($name == 'lahir') {
-                        echo "<label>$label</label><input type='date' name='$name' class='form-control' value='$value'>";
-                    } elseif ($name == 'alamat') {
-                        echo "<label>$label</label><textarea name='$name' class='form-control'>$value</textarea>";
-                    } else {
-                        echo "<label>$label</label><input type='text' name='$name' class='form-control' value='$value' required>";
-                    }
-                    echo '</div>';
-                }
-                ?>
+            <ul class="space-y-4 mt-5">
+                <li>
+                    <a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                        <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
+                    </a>
+                </li>
+                <li>
+                    <a href="datakaryawan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                        <i class="fas fa-users mr-3"></i> DATA STAFF
+                    </a>
+                </li>
+                <li>
+                    <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                    </a>
+                </li>
+                <li>
+                    <a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                        <i class="fas fa-cogs mr-3"></i> PENGATURAN
+                    </a>
+                </li>
+                <li>
+                    <a href="scan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                        <i class="fas fa-qrcode mr-3"></i> SCAN KARTU
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="datakaryawan.php" class="btn btn-secondary">Batal</a>
-            </form>
+        <div class="container py-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3>Ubah Data Staff</h3>
+                    <form method="POST">
+                        <?php
+                        // Daftar input field yang akan ditampilkan
+                        $inputFields = [
+                            'nokartu' => 'Nomor Kartu RFID',
+                            'nisn' => 'NIP/NUPTK',
+                            'nama' => 'Nama Karyawan',
+                            'jabatan' => 'Jabatan',
+                            'wali' => 'Wali',
+                            'lahir' => 'Tanggal Lahir',
+                            'alamat' => 'Alamat'
+                        ];
+
+                        // Loop untuk menampilkan input field
+                        foreach ($inputFields as $name => $label) {
+                            $value = htmlspecialchars($hasil[$name] ?? '');
+                            echo '<div class="form-group">';
+                            if ($name == 'lahir') {
+                                echo "<label>$label</label><input type='date' name='$name' class='form-control' value='$value'>";
+                            } elseif ($name == 'alamat') {
+                                echo "<label>$label</label><textarea name='$name' class='form-control'>$value</textarea>";
+                            } else {
+                                echo "<label>$label</label><input type='text' name='$name' class='form-control' value='$value' required>";
+                            }
+                            echo '</div>';
+                        }
+                        ?>
+
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a href="datakaryawan.php" class="btn btn-secondary">Batal</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+        <?php include "footer.php"; ?>
 
-<?php include "footer.php"; ?>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

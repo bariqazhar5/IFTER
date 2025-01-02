@@ -22,40 +22,39 @@
 
     <!-- Sidebar -->
     <div class="flex flex-col lg:flex-row">
-        <!-- Sidebar Desktop -->
-        <div class="lg:w-1/5 w-full bg-gradient-to-b from-blue-700 to-blue-500 text-white min-h-screen p-6 lg:block hidden">
+        <div class="lg:w-1/5 w-full bg-cover bg-center text-white min-h-screen p-6 lg:block hidden" style="background-image: url('./images/bkg1.png');">
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
-                    <img class="w-12 h-auto" src="./images/loggo.png" alt="Logo">
+                    <img class="w-12 h-auto" src="./images/loggo.png" alt="">
                     <h2 class="text-2xl font-bold mt-2">Absensi</h2>
                 </div>
             </div>
 
-            <div id="datetime" class="text-lg font-semibold mb-5"></div>
+            <div id="datetime" class="text-lg font-semibold text-sm mb-5">Jumat, 3 Januari 2025 | 0:26:45</div>
 
             <ul class="space-y-4 mt-5">
                 <li>
-                    <a href="index.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
+                    <a href="#" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
                     </a>
                 </li>
                 <li>
-                    <a href="datakaryawan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
+                    <a href="datakaryawan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-users mr-3"></i> DATA STAFF
                     </a>
                 </li>
                 <li>
-                    <a href="absensi.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
+                    <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
                     </a>
                 </li>
                 <li>
-                    <a href="pengaturan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
+                    <a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-cogs mr-3"></i> PENGATURAN
                     </a>
                 </li>
                 <li>
-                    <a href="scan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
+                    <a href="scan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-qrcode mr-3"></i> SCAN KARTU
                     </a>
                 </li>
