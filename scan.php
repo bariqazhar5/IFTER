@@ -1,6 +1,11 @@
 <?php
 include "koneksi.php";
 
+// Fetch pengaturan waktu absensi
+$query = "SELECT * FROM pengaturan LIMIT 1";
+$result = $konek->query($query);
+$pengaturan = $result->fetch_assoc();
+
 // Query untuk menghitung staff yang sudah masuk
 $query_sudah_masuk = "SELECT COUNT(*) FROM absensi WHERE jam_masuk IS NOT NULL";
 $result_sudah_masuk = $konek->query($query_sudah_masuk);
@@ -10,6 +15,48 @@ $sudah_masuk = $result_sudah_masuk->fetch_row()[0];
 $query_total_staff = "SELECT COUNT(*) FROM karyawan";
 $result_total_staff = $konek->query($query_total_staff);
 $total_staff = $result_total_staff->fetch_row()[0];
+
+$absensi_diaktifkan = $pengaturan['aktif'] ?? 0;
+$waktu_masuk = $pengaturan['waktu_masuk'] ?? "07:00:00";
+$batas_masuk = $pengaturan['batas_masuk'] ?? 2; 
+$waktu_pulang = $pengaturan['waktu_pulang'] ?? "15:00:00";
+$batas_pulang = $pengaturan['batas_pulang'] ?? 2;
+
+// Konversi waktu batas absensi
+$batas_masuk_akhir = date("H:i:s", strtotime("$waktu_masuk +$batas_masuk hours"));
+$batas_pulang_akhir = date("H:i:s", strtotime("$waktu_pulang +$batas_pulang hours"));
+
+// Periksa waktu saat ini
+$waktu_sekarang = date("H:i:s");
+$pesan = "Menunggu kartu RFID...";
+$rfid_diterima = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $rfid = $_POST['rfid'] ?? '';
+
+    if (!empty($rfid)) {
+        $rfid_diterima = true;
+        
+        // Periksa apakah absensi diaktifkan
+        if ($absensi_diaktifkan) {
+            if (
+                ($waktu_sekarang >= $waktu_masuk && $waktu_sekarang <= $batas_masuk_akhir) ||
+                ($waktu_sekarang >= $waktu_pulang && $waktu_sekarang <= $batas_pulang_akhir)
+            ) {
+                // Waktu absensi valid
+                $pesan = "Absensi berhasil untuk kartu RFID: $rfid.";
+            } else {
+                // Di luar waktu absensi
+                $pesan = "Gagal: Di luar waktu absensi.";
+            }
+        } else {
+            // Absensi nonaktif, bebas waktu
+            $pesan = "Absensi berhasil untuk kartu RFID: $rfid.";
+        }
+    } else {
+        $pesan = "Gagal: Kartu RFID tidak terdeteksi.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -150,8 +197,12 @@ $total_staff = $result_total_staff->fetch_row()[0];
                         <h2 class="text-3xl font-bold mb-4">Scan Kartu RFID</h2>
                         <p class="text-lg mb-6">Silakan tempelkan kartu RFID Anda di perangkat.</p>
                         <div id="cekkartu" class="p-4 bg-white text-blue-700 rounded-lg shadow-lg font-medium">
-                            Menunggu kartu RFID...
+                            <?php echo htmlspecialchars($pesan); ?>
                         </div>
+                        <form method="POST" action="">
+                            <input type="text" name="rfid" placeholder="Masukkan RFID" class="form-control mt-4">
+                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                        </form>
                     </div>
                     <!-- Informasi Tambahan -->
                     <div class="lg:w-1/2 p-6">
