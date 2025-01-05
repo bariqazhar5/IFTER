@@ -1,3 +1,24 @@
+//PIN
+// RC522 RFID Reader
+//SDA -> D4
+//SCK -> D5
+//MOSI -> D7
+//MISO -> D6
+//GND -> GND
+//RST -> D3
+//3.3v -> 3.3
+
+//LED
+//Positif -> D8
+//Negatif -> GND
+
+//Button
+//D1 dan 3.3v
+
+
+
+
+
 #include <SPI.h>
 #include <MFRC522.h>
 #include <ESP8266HTTPClient.h>
