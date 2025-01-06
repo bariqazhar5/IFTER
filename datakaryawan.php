@@ -78,32 +78,12 @@
                     </button>
                 </div>
 
-                <ul class="space-y-4">
-                    <li>
-                        <a href="index.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
-                            <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
-                        </a>
-                    </li>
-                    <li>
-                        <a href="datakaryawan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
-                            <i class="fas fa-users mr-3"></i> DATA STAFF
-                        </a>
-                    </li>
-                    <li>
-                        <a href="absensi.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
-                            <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pengaturan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
-                            <i class="fas fa-cogs mr-3"></i> PENGATURAN
-                        </a>
-                    </li>
-                    <li>
-                        <a href="scan.php" class="flex items-center text-white hover:bg-blue-800 p-3 rounded-lg">
-                            <i class="fas fa-qrcode mr-3"></i> SCAN KARTU
-                        </a>
-                    </li>
+                <ul class="space-y-4 mt-5">
+                    <li><a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD</a></li>
+                    <li><a href="datakaryawan.php" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded"><i class="fas fa-users mr-3"></i> DATA STAFF</a></li>
+                    <li><a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI</a></li>
+                    <li><a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-cogs mr-3"></i> PENGATURAN</a></li>
+                    <li><a href="scan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-qrcode mr-3"></i> SCAN KARTU</a></li>
                 </ul>
             </div>
             <div class="fixed bottom-0 w-full bg-gray-800 text-center text-white py-2">

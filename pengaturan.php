@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <ul class="space-y-4 mt-5">
                 <li>
-                    <a href="#" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                    <a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
                     </a>
                 </li>
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </a>
                 </li>
                 <li>
-                    <a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                    <a href="pengaturan.php" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-cogs mr-3"></i> PENGATURAN
                     </a>
                 </li>

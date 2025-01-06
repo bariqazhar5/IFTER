@@ -46,7 +46,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
 
             <ul class="space-y-4 mt-5">
                 <li>
-                    <a href="#" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                    <a href="#" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
                     </a>
                 </li>

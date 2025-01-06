@@ -79,12 +79,12 @@ if (isset($_GET['id'])) {
 
             <ul class="space-y-4 mt-5">
                 <li>
-                    <a href="#" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                    <a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD
                     </a>
                 </li>
                 <li>
-                    <a href="datakaryawan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
+                    <a href="datakaryawan.php" class="flex items-center text-white  hover:bg-gray-700 p-2 rounded">
                         <i class="fas fa-users mr-3"></i> DATA STAFF
                     </a>
                 </li>
