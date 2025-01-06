@@ -38,7 +38,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-5">   
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>
@@ -75,7 +75,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
 
         <!-- Mobile Sidebar -->
         <div class="lg:hidden bg-blue-500 text-white p-4 flex items-center justify-between">
-            <h2 class="text-lg font-bold">Absensi</h2>
+            <h2 class="text-lg font-bold">Kehadiran</h2>
             <button id="burger" class="text-white text-3xl">
                 <i class="fas fa-bars"></i>
             </button>
@@ -84,7 +84,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
         <div id="mobileSidebar" class="fixed inset-0 bg-blue-500 text-white z-50 transform -translate-x-full transition-transform duration-300">
             <div class="p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-bold">Absensi</h2>
+                    <h2 class="text-xl font-bold">Kehadiran</h2>
                     <button id="closeSidebar" class="text-3xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -103,7 +103,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
                     </li>
                     <li>
                         <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                            <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                            <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                         </a>
                     </li>
                     <li>
@@ -119,7 +119,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
                 </ul>
             </div>
             <div class="fixed bottom-0 w-full bg-gray-800 text-center text-white py-2">
-                <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+                <p>&copy; <?php echo date('Y'); ?> Sistem Kehadiran SDN KarangPawulang</p>
             </div>
         </div>
 
@@ -128,9 +128,9 @@ $total_staff = $result_total_staff->fetch_row()[0];
             <div class="container mx-auto space-y-8">
                 <!-- Dashboard Welcome Section -->
                 <div class="bg-gradient-to-r from-blue-500 to-blue-400 text-white shadow-lg rounded-lg p-8 text-center">
-                    <h1 class="text-4xl font-extrabold mb-2">Selamat Datang di Sistem Absensi</h1>
+                    <h1 class="text-4xl font-extrabold mb-2">Selamat Datang di Sistem Kehadiran</h1>
                     <h2 class="text-2xl font-semibold">SDN KarangPawulang</h2>
-                    <p class="mt-4 text-lg font-medium">Manajemen absensi staff yang efektif dan efisien.</p>
+                    <p class="mt-4 text-lg font-medium">Manajemen Kehadiran staff yang efektif dan efisien.</p>
                 </div>
 
                 <!-- Absensi Stats Section -->
@@ -152,8 +152,8 @@ $total_staff = $result_total_staff->fetch_row()[0];
                             <div class="bg-green-100 text-green-500 rounded-full p-4 mb-4">
                                 <i class="fas fa-calendar-alt text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Rekap Absensi</h3>
-                            <p class="text-lg font-medium text-gray-600 text-center">Lihat rekap absensi lengkap staff</p>
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Rekap Kehadiran</h3>
+                            <p class="text-lg font-medium text-gray-600 text-center">Lihat rekap Kehadiran lengkap staff</p>
                             <a href="absensi.php" class="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">Lihat Rekap</a>
                         </div>
 
@@ -172,7 +172,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
 
                 <!-- Chart Section -->
                 <div class="bg-white shadow-lg rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-700 text-center mb-6">Grafik Absensi</h3>
+                    <h3 class="text-2xl font-bold text-gray-700 text-center mb-6">Grafik Kehadiran</h3>
                     <canvas id="absensiChart"></canvas>
                 </div>
             </div>
@@ -181,7 +181,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
 
     <!-- Footer -->
     <center>
-        <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+        <p>&copy; <?php echo date('Y'); ?> Sistem Kehadiran SDN KarangPawulang</p>
     </center>
     <script>
         function updateDateTime() {

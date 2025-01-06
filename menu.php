@@ -26,7 +26,7 @@ if ($konek) {
                     <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'datakaryawan.php') ? 'active' : ''; ?>" href="datakaryawan.php">Data Karyawan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'absensi.php') ? 'active' : ''; ?>" href="absensi.php">Rekap Absensi</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'absensi.php') ? 'active' : ''; ?>" href="absensi.php">Rekap Kehadiran</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'scan.php') ? 'active' : ''; ?>" href="scan.php">Scan Kartu</a>

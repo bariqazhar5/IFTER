@@ -1,3 +1,3 @@
 <footer>
-        <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+        <p>&copy; <?php echo date('Y'); ?> Sistem Kehadiran SDN KarangPawulang</p>
 </footer>

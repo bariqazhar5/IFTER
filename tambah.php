@@ -97,7 +97,7 @@ mysqli_query($konek, $deleteQuery);
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -116,7 +116,7 @@ mysqli_query($konek, $deleteQuery);
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>

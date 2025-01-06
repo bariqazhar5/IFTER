@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Absensi</title>
+    <title>Pengaturan Kehadiran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-5">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Mobile Sidebar -->
         <div class="lg:hidden bg-blue-500 text-white p-4 flex items-center justify-between">
-            <h2 class="text-lg font-bold">Absensi</h2>
+            <h2 class="text-lg font-bold">Kehadiran</h2>
             <button id="burger" class="text-white text-3xl">
                 <i class="fas fa-bars"></i>
             </button>
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="mobileSidebar" class="fixed inset-0 bg-blue-500 text-white z-50 transform -translate-x-full transition-transform duration-300">
             <div class="p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-bold">Absensi</h2>
+                    <h2 class="text-xl font-bold">Kehadiran</h2>
                     <button id="closeSidebar" class="text-3xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </li>
                     <li>
                         <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                            <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                            <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                         </a>
                     </li>
                     <li>
@@ -151,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </ul>
             </div>
             <div class="fixed bottom-0 w-full bg-gray-800 text-center text-white py-2">
-                <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+                <p>&copy; <?php echo date('Y'); ?> Sistem Kehadiran SDN KarangPawulang</p>
             </div>
         </div>
 
@@ -159,29 +159,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <main class="container my-5">
             <div class="card shadow border-0">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="m-0">Pengaturan Waktu Absensi</h3>
+                    <h3 class="m-0">Pengaturan Waktu Kehadiran</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="">
                         <div class="mb-3">
-                            <label for="pagi_mulai" class="form-label">Waktu Absensi Pagi</label>
+                            <label for="pagi_mulai" class="form-label">Waktu Kehadiran Pagi</label>
                             <input type="time" class="form-control" id="pagi_mulai" name="pagi_mulai" value="<?php echo htmlspecialchars($pengaturan['pagi_mulai']); ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="pagi_batas" class="form-label">Batas Waktu Absensi Pagi (jam)</label>
+                            <label for="pagi_batas" class="form-label">Batas Waktu Kehadiran Pagi (jam)</label>
                             <input type="number" step="0.1" class="form-control" id="pagi_batas" name="pagi_batas" value="<?php echo htmlspecialchars($pengaturan['pagi_batas']); ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="sore_mulai" class="form-label">Waktu Absensi Sore</label>
+                            <label for="sore_mulai" class="form-label">Waktu Kehadiran Sore</label>
                             <input type="time" class="form-control" id="sore_mulai" name="sore_mulai" value="<?php echo htmlspecialchars($pengaturan['sore_mulai']); ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="sore_batas" class="form-label">Batas Waktu Absensi Sore (jam)</label>
+                            <label for="sore_batas" class="form-label">Batas Waktu Kehadiran Sore (jam)</label>
                             <input type="number" step="0.1" class="form-control" id="sore_batas" name="sore_batas" value="<?php echo htmlspecialchars($pengaturan['sore_batas']); ?>" required>
                         </div>
                         <div class="form-check form-switch mb-3">
                             <input class="form-check-input" type="checkbox" id="aktifkan_absensi" name="aktifkan_absensi" <?php echo $pengaturan['aktifkan_absensi'] ? 'checked' : ''; ?>>
-                            <label class="form-check-label" for="aktifkan_absensi">Aktifkan Pengaturan Waktu Absensi</label>
+                            <label class="form-check-label" for="aktifkan_absensi">Aktifkan Pengaturan Waktu Kehadiran</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
                     </form>

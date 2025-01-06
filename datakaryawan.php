@@ -26,7 +26,7 @@
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
 
         <!-- Sidebar Mobile -->
         <div class="lg:hidden bg-blue-600 text-white p-4 flex items-center justify-between">
-            <h2 class="text-lg font-bold">Absensi</h2>
+            <h2 class="text-lg font-bold">Kehadiran</h2>
             <button id="burger" class="text-white text-3xl">
                 <i class="fas fa-bars"></i>
             </button>
@@ -72,7 +72,7 @@
         <div id="mobileSidebar" class="fixed inset-0 bg-blue-600 text-white z-50 transform -translate-x-full transition-transform duration-300">
             <div class="p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-bold">Absensi</h2>
+                    <h2 class="text-xl font-bold">Kehadiran</h2>
                     <button id="closeSidebar" class="text-3xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -81,13 +81,13 @@
                 <ul class="space-y-4 mt-5">
                     <li><a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD</a></li>
                     <li><a href="datakaryawan.php" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded"><i class="fas fa-users mr-3"></i> DATA STAFF</a></li>
-                    <li><a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI</a></li>
+                    <li><a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN</a></li>
                     <li><a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-cogs mr-3"></i> PENGATURAN</a></li>
                     <li><a href="scan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-qrcode mr-3"></i> SCAN KARTU</a></li>
                 </ul>
             </div>
             <div class="fixed bottom-0 w-full bg-gray-800 text-center text-white py-2">
-                <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+                <p>&copy; <?php echo date('Y'); ?> Sistem kehadiran SDN KarangPawulang</p>
             </div>
         </div>
 

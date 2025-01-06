@@ -44,14 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ($waktu_sekarang >= $waktu_pulang && $waktu_sekarang <= $batas_pulang_akhir)
             ) {
                 // Waktu absensi valid
-                $pesan = "Absensi berhasil untuk kartu RFID: $rfid.";
+                $pesan = "Kehadiran berhasil untuk kartu RFID: $rfid.";
             } else {
                 // Di luar waktu absensi
-                $pesan = "Gagal: Di luar waktu absensi.";
+                $pesan = "Gagal: Di luar waktu Kehadiran.";
             }
         } else {
             // Absensi nonaktif, bebas waktu
-            $pesan = "Absensi berhasil untuk kartu RFID: $rfid.";
+            $pesan = "Kehadiran berhasil untuk kartu RFID: $rfid.";
         }
     } else {
         $pesan = "Gagal: Kartu RFID tidak terdeteksi.";
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Mobile Sidebar -->
         <div class="lg:hidden bg-blue-500 text-white p-4 flex items-center justify-between">
-            <h2 class="text-lg font-bold">Absensi</h2>
+            <h2 class="text-lg font-bold">Kehadiran</h2>
             <button id="burger" class="text-white text-3xl">
                 <i class="fas fa-bars"></i>
             </button>
@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="mobileSidebar" class="fixed inset-0 bg-blue-500 text-white z-50 transform -translate-x-full transition-transform duration-300">
             <div class="p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-bold">Absensi</h2>
+                    <h2 class="text-xl font-bold">Kehadiran</h2>
                     <button id="closeSidebar" class="text-3xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -168,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </li>
                     <li>
                         <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                            <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                            <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                         </a>
                     </li>
                     <li>
@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </ul>
             </div>
             <div class="fixed bottom-0 w-full bg-gray-800 text-center text-white py-2">
-                <p>&copy; <?php echo date('Y'); ?> Sistem Absensi SDN KarangPawulang</p>
+                <p>&copy; <?php echo date('Y'); ?> Sistem Kehadiran SDN KarangPawulang</p>
             </div>
         </div>
 
@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <h3 class="text-xl font-semibold mb-4">Statistik Hari Ini</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-blue-100 p-4 rounded-lg shadow">
-                                <h4 class="text-lg font-bold text-blue-700">Total Absensi</h4>
+                                <h4 class="text-lg font-bold text-blue-700">Total Kehadiran</h4>
                                 <p class="text-2xl font-bold text-blue-900"><?php echo $sudah_masuk; ?></p>
                             </div>
                             <div class="bg-green-100 p-4 rounded-lg shadow">

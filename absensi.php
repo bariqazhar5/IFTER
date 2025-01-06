@@ -3,7 +3,7 @@
 
 <head>
     <?php include "header.php"; ?>
-    <title>Rekapitulasi Absensi</title>
+    <title>Rekapitulasi Kehadiran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,13 +17,13 @@
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
             <ul class="space-y-4 mt-5">
                 <li><a href="index.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-tachometer-alt mr-3"></i> DASHBOARD</a></li>
                 <li><a href="datakaryawan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-users mr-3"></i> DATA STAFF</a></li>
-                <li><a href="absensi.php" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded"><i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI</a></li>
+                <li><a href="absensi.php" class="flex items-center text-white bg-gray-700 hover:bg-gray-700 p-2 rounded"><i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN</a></li>
                 <li><a href="pengaturan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-cogs mr-3"></i> PENGATURAN</a></li>
                 <li><a href="scan.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded"><i class="fas fa-qrcode mr-3"></i> SCAN KARTU</a></li>
             </ul>
@@ -32,7 +32,7 @@
         <main class="container my-5">
             <div class="card shadow border-0">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="m-0">Rekapitulasi Absensi</h3>
+                    <h3 class="m-0">Rekapitulasi Kehadiran</h3>
                 </div>
                 <div class="card-body">
                     <form method="GET" action="" class="row gx-3 gy-2 align-items-center mb-4">
@@ -119,15 +119,7 @@
                                         <td class="text-center"><?php echo htmlspecialchars($data['jam_masuk']); ?></td>
                                         <td class="text-center"><?php echo htmlspecialchars($data['jam_pulang']); ?></td>
                                         <td class="text-center">
-                                            <form id="statusForm<?php echo $data['id']; ?>" method="POST" action="update_status.php">
-                                                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-                                                <select name="status" class="form-select" onchange="updateStatus(<?php echo $data['id']; ?>)">
-                                                    <option value="Hadir" <?php echo $data['status'] == 'Hadir' ? 'selected' : ''; ?>>Hadir</option>
-                                                    <option value="Izin" <?php echo $data['status'] == 'Izin' ? 'selected' : ''; ?>>Izin</option>
-                                                    <option value="Sakit" <?php echo $data['status'] == 'Sakit' ? 'selected' : ''; ?>>Sakit</option>
-                                                    <option value="Alpha" <?php echo $data['status'] == 'Alpha' ? 'selected' : ''; ?>>Alpha</option>
-                                                </select>
-                                            </form>
+                                            
                                         </td>
                                         <td class="text-center">
                                             <a href="edit_absensi.php?id=<?php echo urlencode($data['id']); ?>" class="btn btn-sm btn-primary">Edit</a>
@@ -147,27 +139,27 @@
     </div>
 
     <script>
-        function updateStatus(id) {
-            const form = document.getElementById(`statusForm${id}`);
-            const formData = new FormData(form);
+        // function updateStatus(id) {
+        //     const form = document.getElementById(`statusForm${id}`);
+        //     const formData = new FormData(form);
 
-            fetch('update_status.php', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Status berhasil diubah!');
-                } else {
-                    alert('Terjadi kesalahan: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Terjadi kesalahan. Silakan coba lagi.');
-            });
-        }
+        //     fetch('update_status.php', {
+        //         method: 'POST',
+        //         body: formData,
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (data.success) {
+        //             alert('Status berhasil diubah!');
+        //         } else {
+        //             alert('Terjadi kesalahan: ' + data.message);
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //         alert('Terjadi kesalahan. Silakan coba lagi.');
+        //     });
+        // }
     </script>
 </body>
 

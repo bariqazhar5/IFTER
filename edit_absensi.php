@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
 
 <head>
     <?php include "header.php"; ?>
-    <title>Edit Absensi</title>
+    <title>Edit Kehadiran</title>
 
     <!-- Tambahkan link CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@ if (isset($_GET['id'])) {
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
-                    <h2 class="text-2xl font-bold mt-2">Absensi</h2>
+                    <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@ if (isset($_GET['id'])) {
                 </li>
                 <li>
                     <a href="absensi.php" class="flex items-center text-white hover:bg-gray-700 p-2 rounded">
-                        <i class="fas fa-history mr-3"></i> RIWAYAT ABSENSI
+                        <i class="fas fa-history mr-3"></i> RIWAYAT KEHADIRAN
                     </a>
                 </li>
                 <li>
@@ -109,7 +109,7 @@ if (isset($_GET['id'])) {
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh; Width: 100%;">
             <div class="card shadow-lg border-0 rounded" style="width: 50%;">
                 <div class="card-body">
-                    <h3 class="text-center mb-4">Edit Absensi</h3>
+                    <h3 class="text-center mb-4">Edit Kehadiran</h3>
                     <!-- Form Edit Absensi -->
                     <form method="POST">
                         <div class="form-group mb-3">
@@ -133,7 +133,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success btn-lg">Update Absensi</button>
+                            <button type="submit" class="btn btn-success btn-lg">Update Kehadiran</button>
                             <a href="absensi.php" class="btn btn-secondary btn-lg ms-3">Kembali</a>
                         </div>
                     </form>
