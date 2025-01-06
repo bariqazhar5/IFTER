@@ -3,7 +3,7 @@ include "koneksi.php";
 
 if (isset($_POST['btnSimpan'])) {
     // Baca inputan form dan sanitasi
-    $nokartu = mysqli_real_escape_string($konek, $_POST['nokartu']);
+    $nokartu = isset($_POST['nokartu']) ? mysqli_real_escape_string($konek, $_POST['nokartu']) : '';
     $nisn = mysqli_real_escape_string($konek, $_POST['nisn']);
     $nama = mysqli_real_escape_string($konek, $_POST['nama']);
     $jabatan = mysqli_real_escape_string($konek, $_POST['jabatan']);
@@ -65,10 +65,18 @@ mysqli_query($konek, $deleteQuery);
     <script type="text/javascript">
         $(document).ready(function() {
             setInterval(function() {
-                $("#norfid").load('nokartu.php')
-            }, 2000); // Timer pembacan file nokartu.php, 1 detik =1000
+                $("#norfid").load('nokartu.php', function(response) {
+                    // Jika pesan adalah "Tidak ada kartu yang terdeteksi", tampilkan pesan peringatan
+                    if (response.trim() === "Tidak ada kartu yang terdeteksi.") {
+                        $("#norfid").html('<p style="color: red;">Tidak ada kartu yang terdeteksi. Silakan coba lagi.</p>');
+                    } else {
+                        $("#norfid").html('<p> ' + response + '</p>');
+                    }
+                });
+            }, 2000);
         });
     </script>
+
 
     <!-- Tambahkan link CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -174,10 +182,10 @@ mysqli_query($konek, $deleteQuery);
             </div>
         </div>
     </div>
-        <?php include "footer.php"; ?>
+    <?php include "footer.php"; ?>
 
-        <!-- Tambahkan JS Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tambahkan JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

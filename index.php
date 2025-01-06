@@ -36,7 +36,7 @@ $total_staff = $result_total_staff->fetch_row()[0];
     <div class="flex flex-col lg:flex-row">
         <div class="lg:w-1/5 w-full bg-cover bg-center text-white min-h-screen p-6 lg:block hidden" style="background-image: url('./images/bkg1.png');">
             <div class="flex items-center justify-between mb-6">
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-5">   
                     <img class="w-12 h-auto" src="./images/loggo.png" alt="">
                     <h2 class="text-2xl font-bold mt-2">Absensi</h2>
                 </div>
