@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <?php include "header.php"; ?>
     <title>Rekapitulasi Kehadiran</title>
@@ -10,13 +9,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar -->
         <div class="lg:w-1/5 w-full bg-cover bg-center text-white min-h-screen p-6 lg:block hidden" style="background-image: url('./images/bkg1.png');">
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center gap-3">
-                    <img class="w-12 h-auto" src="./images/loggo.png" alt="">
+                    <img class="w-12 h-auto" src="./images/loggo.png" alt="Logo">
                     <h2 class="text-2xl font-bold mt-2">Kehadiran</h2>
                 </div>
             </div>
@@ -29,6 +28,7 @@
             </ul>
         </div>
 
+        <!-- Main Content -->
         <main class="container my-5">
             <div class="card shadow border-0">
                 <div class="card-header bg-primary text-white">
@@ -66,6 +66,7 @@
                     </form>
                     <hr>
 
+                    <!-- Table -->
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered align-middle">
                             <thead class="table-dark text-center">
@@ -75,7 +76,6 @@
                                     <th>Tanggal</th>
                                     <th>Jam Masuk</th>
                                     <th>Jam Pulang</th>
-                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -88,7 +88,7 @@
                                 $year = date('Y');
 
                                 $sql_query = "
-                                SELECT a.id, b.nama, a.tanggal, a.jam_masuk, a.jam_pulang, a.status
+                                SELECT a.id, b.nama, a.tanggal, a.jam_masuk, a.jam_pulang 
                                 FROM absensi a
                                 JOIN karyawan b ON a.nokartu = b.nokartu
                                 WHERE (b.nama LIKE ? OR b.jabatan LIKE ? OR a.tanggal LIKE ?)
@@ -119,9 +119,6 @@
                                         <td class="text-center"><?php echo htmlspecialchars($data['jam_masuk']); ?></td>
                                         <td class="text-center"><?php echo htmlspecialchars($data['jam_pulang']); ?></td>
                                         <td class="text-center">
-                                            
-                                        </td>
-                                        <td class="text-center">
                                             <a href="edit_absensi.php?id=<?php echo urlencode($data['id']); ?>" class="btn btn-sm btn-primary">Edit</a>
                                             <a href="hapus_absensi.php?id=<?php echo urlencode($data['id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?');">Hapus</a>
                                         </td>
@@ -131,36 +128,11 @@
                         </table>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <a href="downloadcsv.php?search=<?php echo urlencode($search); ?>&month=<?php echo $month; ?>&week=<?php echo $week; ?>" class="btn btn-success">Unduh CSV</a>
+                        <a href="downloadcsv.php?search=<?php echo urlencode($search); ?>&month=<?php echo $month; ?>&week=<?php echo $week; ?>" class="btn btn-success">Unduh excel</a>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-
-    <script>
-        // function updateStatus(id) {
-        //     const form = document.getElementById(`statusForm${id}`);
-        //     const formData = new FormData(form);
-
-        //     fetch('update_status.php', {
-        //         method: 'POST',
-        //         body: formData,
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (data.success) {
-        //             alert('Status berhasil diubah!');
-        //         } else {
-        //             alert('Terjadi kesalahan: ' + data.message);
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //         alert('Terjadi kesalahan. Silakan coba lagi.');
-        //     });
-        // }
-    </script>
 </body>
-
 </html>
